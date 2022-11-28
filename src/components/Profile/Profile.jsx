@@ -1,32 +1,45 @@
 import PropTypes from 'prop-types';
+import { ProfileContainer } from './Profile.styled';
+import { Description } from './Profile.styled';
+import { Avatar } from './Profile.styled';
+import { Name } from './Profile.styled';
+import { Tag } from './Profile.styled';
+import { Location } from './Profile.styled';
+import { StatsContainer } from './Profile.styled';
+import { StatsFollowers } from './Profile.styled';
+import { StatsViews } from './Profile.styled';
+import { StatsLikes } from './Profile.styled';
+import { Label } from './Profile.styled';
+import { Quantity } from './Profile.styled';
 
 export const Profile = ({ username, tag, location, avatar, stats }) => {
   return (
-    <div class="profile">
-      <div class="description">
-        <img src={avatar} alt="User avatar" class="avatar" />
-        <p class="name">{username}</p>
-        <p class="tag">@{tag}</p>
-        <p class="location">{location}</p>
-      </div>
+    <ProfileContainer>
+      <Description>
+        <Avatar src={avatar} alt="User avatar" className="avatar" />
+        <Name>{username}</Name>
+        <Tag>@{tag}</Tag>
+        <Location>{location}</Location>
+      </Description>
 
-      <ul class="stats">
-        <li>
-          <span class="label">Followers</span>
-          <span class="quantity">{stats.followers}</span>
-        </li>
-        <li>
-          <span class="label">Views</span>
-          <span class="quantity">{stats.views}</span>
-        </li>
-        <li>
-          <span class="label">Likes</span>
-          <span class="quantity">{stats.likes}</span>
-        </li>
-      </ul>
-    </div>
+      <StatsContainer>
+        <StatsFollowers>
+          <Label>Followers</Label>
+          <Quantity>{stats.followers}</Quantity>
+        </StatsFollowers>
+        <StatsViews>
+          <Label>Views</Label>
+          <Quantity>{stats.views}</Quantity>
+        </StatsViews>
+        <StatsLikes>
+          <Label>Likes</Label>
+          <Quantity>{stats.likes}</Quantity>
+        </StatsLikes>
+      </StatsContainer>
+    </ProfileContainer>
   );
 };
+
 Profile.propTypes = {
   username: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
