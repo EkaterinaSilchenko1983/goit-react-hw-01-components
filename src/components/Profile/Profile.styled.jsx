@@ -6,6 +6,7 @@ export const ProfileContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #ffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
@@ -27,10 +28,8 @@ export const Avatar = styled.img`
 `;
 export const Name = styled.p`
   font-family: 'Roboto', sans-serif;
-
-  margin-bottom: 10px;
-  // font-weight: bold;
   font-size: 20px;
+  margin-bottom: 10px;
 `;
 export const Tag = styled.p`
   margin-bottom: 10px;
